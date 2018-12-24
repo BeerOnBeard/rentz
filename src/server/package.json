@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --inspect index.js"
+  },
+  "author": "BeerOnBeard",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "memorystore": "^1.6.0",
+    "passport": "^0.4.0",
+    "passport-strategy": "^1.0.0"
+  }
+}

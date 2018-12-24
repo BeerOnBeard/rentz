@@ -1,0 +1,14 @@
+{
+  "name": "src",
+  "version": "0.1.0",
+  "scripts": {
+    "client-dev": "cd client && npm start",
+    "server-dev": "cd server && npm run dev",
+    "dev": "concurrently --kill-others-on-fail \"npm:client-dev\" \"npm:server-dev\""
+  },
+  "author": "BeerOnBeard",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  }
+}
