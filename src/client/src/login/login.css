@@ -1,0 +1,31 @@
+.login {
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__title {
+  font-size: 3rem;
+}
+
+.login__image {
+  width: 14rem;
+}
+
+.login__link {
+  width: 14rem;
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  color: #FFFFFF;
+  background-color: #4285F4;
+  transition: background-color 0.2s;
+}
+
+.login__link:hover {
+  background-color: #1C6EF2;
+}

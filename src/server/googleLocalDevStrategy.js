@@ -11,13 +11,18 @@ function Strategy(name, authUrl, callbackUrl, user) {
 
 util.inherits(Strategy, passport.Strategy);
 
-Strategy.prototype.authenticate = function(incomingMessage) {
-  if (incomingMessage.url === this._authUrl) {
+Strategy.prototype.authenticate = function(req) {
+  if (req.url === this._authUrl) {
     this.redirect(this._callbackUrl);
     return;
   }
 
-  this.success(this._user);
+  if (req.user || req.url === this._callbackUrl) {
+    this.success(this._user);
+    return;
+  }
+
+  this.fail();
 };
 
 module.exports = Strategy;

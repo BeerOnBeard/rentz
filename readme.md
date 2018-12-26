@@ -6,9 +6,23 @@ The card game of Rentz takes time and lots of point tracking. This application c
 
 [Wireframes are in Google Docs](https://docs.google.com/presentation/d/1p5Q9uCdmO3uhFi9ViRR8v3_9vaQhYn9rbkuAIvk5KyU). Request permissions and one of the contributors will give you the level of permission they see fit.
 
-## VSCode
+## Local Development
 
-A `launch.json` config is provided that will attach to the NodeJS server. The server, when `npm run dev` is used, will restart on changes and the debugger will re-attach when the server is available.
+### Local Tools
+
+Developers must have [NodeJS](https://nodejs.org/en/download/) installed. NPM is used for launching the development environment.
+
+A `launch.json` config is provided for [VSCode](https://code.visualstudio.com/download) that will attach to the NodeJS server. The server, when `npm run dev` is used, will restart on changes and the debugger will re-attach when the server is available.
+
+### Running the App
+
+From the `src` directory, run
+
+```
+npm run dev
+```
+
+The client will be available at `http://localhost:3000`. The server will be available at `http://localhost:3100`. The client uses the Webpack development server to proxy requests to `http://localhost:3000` to `http://localhost:3100`.
 
 ## Environment Variables
 
