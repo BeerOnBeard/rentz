@@ -1,17 +1,16 @@
-
-.loading-outer {
+.loading {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
 }
 /* Hourglass loader https://loading.io/css/ */
-.lds-hourglass {
+.loading__hourglass {
     max-width: 50%;
     width: 64px;
     height: 64px;
   }
-  .lds-hourglass:after {
+  .loading__hourglass:after {
     content: " ";
     display: block;
     border-radius: 50%;
@@ -21,9 +20,9 @@
     box-sizing: border-box;
     border: 26px solid #fff;
     border-color: #fff palevioletred #fff palevioletred;
-    animation: lds-hourglass 1.2s infinite;
+    animation: loading__hourglass 1.2s infinite;
   }
-  @keyframes lds-hourglass {
+  @keyframes loading__hourglass {
     0% {
       transform: rotate(0);
       animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
