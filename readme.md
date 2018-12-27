@@ -19,6 +19,7 @@ A `launch.json` config is provided for [VSCode](https://code.visualstudio.com/do
 From the `src` directory, run
 
 ```
+npm i
 npm run dev
 ```
 
