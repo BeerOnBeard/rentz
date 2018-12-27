@@ -25,16 +25,12 @@ export class Menu extends Component {
     render() {
         return (
             <div>
-                <button className="hamburger" onClick={()=>this.onClick()}>&#9776; Menu</button>
-                <div className={`menu ${this.state.isOpen ? 'open' : 'closed'}`}>
-                    <ul>
-                        <li>
-                            <div onClick={() => this.select(1)}>Scores</div>
-                        </li>
-                        <li>
-                            <div href="#" onClick={() => this.select(2)}>Log Out</div>
-                        </li>
-                    </ul>
+                <button className="menu__hamburger" onClick={() => this.onClick()}>&#9776; Menu</button>
+                <div className={`menu menu--${this.state.isOpen ? 'open' : 'closed'}`}>
+                    <div className="menu__items">
+                        <div className="menu__item" onClick={() => this.select(1)}>Scores</div>
+                        <div className="menu__item" onClick={() => this.select(2)}>Log Out</div>
+                    </div>
                 </div>
             </div>
         )
