@@ -31,10 +31,10 @@ export class Menu extends Component {
                 <div className={`menu ${this.state.isOpen ? 'open' : 'closed'}`}>
                     <ul>
                         <li>
-                            <a href="#" onClick={() => this.select(1)}>Scores</a>
+                            <a href="/" onClick={() => this.select(1)}>Scores</a>
                         </li>
                         <li>
-                            <a href="#" onClick={() => this.select(2)}>Log Out</a>
+                            <a href="/" onClick={() => this.select(2)}>Log Out</a>
                         </li>
                     </ul>
                 </div>
