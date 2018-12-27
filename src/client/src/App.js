@@ -4,6 +4,8 @@ import './App.css';
 
 import Login from './login';
 import Loading from './loading';
+import Lounge from './lounge';
+import Game from './game';
 
 class App extends Component {
   render() {
@@ -15,7 +17,11 @@ class App extends Component {
       return <Loading />
     }
 
-    return <div>{ this.props.user ? this.props.user.name : 'Nothing' }</div>
+    if (!this.props.game) {
+      return <Lounge />
+    }
+
+    return <Game />
   }
 }
 
