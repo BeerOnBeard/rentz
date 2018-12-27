@@ -1,12 +1,13 @@
 
 .loading-outer {
-    display: block;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 /* Hourglass loader https://loading.io/css/ */
 .lds-hourglass {
-    display: inline-block;
-    position: relative;
+    max-width: 50%;
     width: 64px;
     height: 64px;
   }
