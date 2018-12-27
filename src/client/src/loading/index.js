@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { AUTHENTICATION_FAILED, USER_RECEIVED } from '../redux/events';
 
-import HourglassSpinner from '../components/hourglass-spinner'
+import HourglassSpinner from './hourglass-spinner'
 
 function authenticationFailed() {
   return { type: AUTHENTICATION_FAILED };
