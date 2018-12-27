@@ -8,6 +8,19 @@ The card game of Rentz takes time and lots of point tracking. This application c
 
 ## Local Development
 
+### Run npm install
+
+```
+cd src/client
+npm install
+
+cd ../server
+npm install
+
+cd ..
+npm install
+```
+
 ### Local Tools
 
 Developers must have [NodeJS](https://nodejs.org/en/download/) installed. NPM is used for launching the development environment.
