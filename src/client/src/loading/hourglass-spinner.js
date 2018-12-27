@@ -4,8 +4,8 @@ import "./hourglass.css";
 class HourglassSpinner extends Component {
   render() {
     return (
-      <div class="loading-outer">
-        <div class="lds-hourglass" />
+      <div className="loading">
+        <div className="loading__hourglass" />
       </div>
     );
   }
