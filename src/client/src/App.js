@@ -26,5 +26,5 @@ class App extends Component {
 }
 
 export default connect(
-  state => { return { mustLogIn: state.mustLogIn, user: state.user } }
+  state => { return { mustLogIn: state.mustLogIn, user: state.user, game: state.game } }
 )(App);

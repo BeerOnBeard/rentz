@@ -1,9 +1,33 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { GAME_CREATED } from 'game/events';
+import './lounge.css';
+
+function gameCreated(id) {
+  return {
+    type: GAME_CREATED,
+    data: { id }
+  };
+}
 
 class Lounge extends Component {
+  createGame() {
+    // TODO: Add error handling
+    fetch('/games', { method: 'post'})
+      .then(response => response.json())
+      .then(game => this.props.gameCreated(game.id));
+  }
+
   render() {
-    return <div>Lounge</div>
+    return (
+      <div className="lounge">
+        <div className="lounge__create-game" onClick={_ => this.createGame()}>Create Game</div>
+      </div>
+    );
   }
 }
 
-export default Lounge;
+export default connect(
+  null,
+  { gameCreated }
+)(Lounge);

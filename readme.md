@@ -20,6 +20,12 @@ Developers must have [NodeJS](https://nodejs.org/en/download/) installed. NPM is
 
 A `launch.json` config is provided for [VSCode](https://code.visualstudio.com/download) that will attach to the NodeJS server. The server, when `npm run dev` is used, will restart on changes and the debugger will re-attach when the server is available.
 
+Docker is required for spinning up a local EventStore instance. A `docker-compose.yml` file is available in the project root to spin it up with the correct settings. To start the database, run the following commands in the root directory:
+
+```
+docker-compose up
+```
+
 ### Running the App
 
 From the `src` directory, run

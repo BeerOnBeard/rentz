@@ -1,0 +1,21 @@
+.lounge {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lounge__create-game {
+  height: 3rem;
+  line-height: 3rem;
+  width: 14rem;
+  text-align: center;
+  cursor: pointer;
+  color: #FFFFFF;
+  background-color: #4285F4;
+  transition: background-color 0.2s;
+}
+
+.lounge__create-game:hover {
+  background-color: #1C6EF2;
+}
