@@ -1,10 +1,10 @@
 import { createStore } from 'redux';
-import { USER_RECEIVED, AUTHENTICATION_FAILED } from './events';
+import { USER_RECEIVED, AUTHENTICATION_FAILED, LOGGED_OUT } from './events';
 import Game from 'game';
 import { GAME_CREATED } from 'game/events';
 
 function reducer(state = { mustLogIn: false }, event) {
-  switch(event.type) {
+  switch (event.type) {
     case AUTHENTICATION_FAILED:
       return { ...state, mustLogIn: true }
     case USER_RECEIVED:
@@ -13,6 +13,8 @@ function reducer(state = { mustLogIn: false }, event) {
       let game = new Game();
       game.apply(event);
       return { ...state, game: game };
+    case LOGGED_OUT:
+      return { ...state, mustLogIn: true, user: undefined }
     default:
       return state;
   }

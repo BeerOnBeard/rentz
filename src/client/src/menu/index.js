@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import {LOGGED_OUT} from '../redux/events'
 import './menu.css'
 
-export class Menu extends Component {
+function loggedOut() {
+    return {
+        type: LOGGED_OUT
+    }
+}
+class Menu extends Component {
     constructor(props) {
         super(props);
 
@@ -29,7 +36,7 @@ export class Menu extends Component {
                 <div className={`menu menu--${this.state.isOpen ? 'open' : 'closed'}`}>
                     <div className="menu__items">
                         <div className="menu__item" onClick={() => this.select(1)}>Scores</div>
-                        <div className="menu__item" onClick={() => this.select(2)}>Log Out</div>
+                        <div className="menu__item" onClick={() => this.props.loggedOut()}>Log Out</div>
                     </div>
                 </div>
             </div>
@@ -37,4 +44,4 @@ export class Menu extends Component {
     }
 }
 
-export default Menu
+export default connect(null, {loggedOut})(Menu)
