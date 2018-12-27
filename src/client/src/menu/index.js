@@ -8,8 +8,6 @@ export class Menu extends Component {
         this.state = {
             isOpen: false
         }
-
-        this.onClick = this.onClick.bind(this)
     }
 
     onClick() {
@@ -27,7 +25,7 @@ export class Menu extends Component {
     render() {
         return (
             <div>
-                <button className="hamburger" onClick={this.onClick}>&#9776; Menu</button>
+                <button className="hamburger" onClick={()=>this.onClick()}>&#9776; Menu</button>
                 <div className={`menu ${this.state.isOpen ? 'open' : 'closed'}`}>
                     <ul>
                         <li>
