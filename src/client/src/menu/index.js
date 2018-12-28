@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {LOGGED_OUT} from '../redux/events'
+import { LOGGED_OUT } from '../redux/events'
 import './menu.css'
 
 function loggedOut() {
@@ -29,6 +29,20 @@ class Menu extends Component {
         alert('selected item' + item)
     }
 
+    logout() {
+        fetch('/logout', {
+            method: "POST"
+        })
+            .then(res => {
+                if (res.ok) {
+                    this.props.loggedOut()
+                }
+                else {
+                    throw Error('Could not log out')
+                }
+            })
+    }
+
     render() {
         return (
             <div>
@@ -36,7 +50,7 @@ class Menu extends Component {
                 <div className={`menu menu--${this.state.isOpen ? 'open' : 'closed'}`}>
                     <div className="menu__items">
                         <div className="menu__item" onClick={() => this.select(1)}>Scores</div>
-                        <div className="menu__item" onClick={() => this.props.loggedOut()}>Log Out</div>
+                        <div className="menu__item" onClick={() => this.logout()}>Log Out</div>
                     </div>
                 </div>
             </div>
@@ -44,4 +58,4 @@ class Menu extends Component {
     }
 }
 
-export default connect(null, {loggedOut})(Menu)
+export default connect(null, { loggedOut })(Menu)
