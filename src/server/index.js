@@ -26,6 +26,12 @@ app.use(passport.authenticate('google'));
 app.get(googleAuthPath);
 app.get(googleAuthCallbackPath, (req, res) => res.redirect('/'));
 
+// logout
+app.post('/logout', function(req, res){
+  req.logout();
+  res.status(204).json({});
+});
+
 const eventStoreConfiguration = {
   host: 'localhost',
   port: 1113,
@@ -55,6 +61,8 @@ app.listen(port, () => console.log(`Listening on port ${port}...`));
 app.get('/', (req, res) => res.redirect('http://localhost:3000/'));
 
 app.get('/user', (req, res) => { res.json({ name: req.user.displayName, photo: req.user.photos[0].value })});
+
+
 
 function generateGameId() {
   const potentialLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
