@@ -2,6 +2,7 @@ const port = 3100;
 
 const express = require('express');
 const app = express();
+app.use(express.json());
 app.use(express.static('public'));
 app.use(require('./sessionAdapter'));
 
@@ -67,11 +68,15 @@ function generateGameId() {
 }
 
 // create game
+// body: { virtualPlayers: { ID: 'name', ID: 'name } }
 app.post('/games', async (req, res) => {
+  let virtualPlayers = req.body.virtualPlayers;
+  
   // TODO: have to handle if an ID is generated that's already used
   let gameId = generateGameId();
   let game = await gameRepository.get(gameId);
-  game.create(gameId);
+  game.create(gameId, virtualPlayers);
   let savedGame = await gameRepository.save(game);
+
   res.status(201).json(savedGame);
 });

@@ -1,0 +1,52 @@
+.virtual-players-form {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+.virtual-players-form__description {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.virtual-players-form__players {
+  display: flex;
+  flex-flow: column;
+}
+
+.virtual-players-form__player {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.virtual-players-form__player > input {
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 2rem;
+  text-align: center;
+}
+
+.virtual-players-form__player > div {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: red;
+  cursor: pointer;
+}
+
+.virtual-players-form__new {
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 2rem;
+  border: 1px black dotted;
+}
+
+.virtual-players-form__add {
+  font-size: 1.2rem;
+  text-align: center;
+  border: 1px black dotted;
+  cursor: pointer;
+  background-color: transparent;
+}

@@ -1,0 +1,28 @@
+.primary-button {
+  height: 3rem;
+  line-height: 3rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  color: #FFFFFF;
+  border: none;
+  background-color: #4285F4;
+  transition: background-color 0.2s;
+}
+
+.primary-button:hover {
+  background-color: #1C6EF2;
+}
+
+.primary-button:focus {
+  background-color: #1C6EF2;
+}
+
+.primary-button--disabled {
+  background-color: #758399;
+}
+
+.primary-button--disabled:hover {
+  background-color: #758399;
+}

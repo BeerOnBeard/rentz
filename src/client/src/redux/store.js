@@ -1,7 +1,6 @@
 import { createStore } from 'redux';
-import { USER_RECEIVED, AUTHENTICATION_FAILED } from './events';
+import { USER_RECEIVED, AUTHENTICATION_FAILED, CREATING_GAME, GAME_STARTED } from './events';
 import Game from 'game';
-import { GAME_CREATED } from 'game/events';
 
 function reducer(state = { mustLogIn: false }, event) {
   switch(event.type) {
@@ -9,10 +8,11 @@ function reducer(state = { mustLogIn: false }, event) {
       return { ...state, mustLogIn: true }
     case USER_RECEIVED:
       return { ...state, mustLogIn: false, user: event.data };
-    case GAME_CREATED:
-      let game = new Game();
-      game.apply(event);
-      return { ...state, game: game };
+    case CREATING_GAME:
+      return { ...state, isCreatingGame: true }
+    case GAME_STARTED:
+      let game = new Game(event.data.game);
+      return { ...state, game: game, isCreatingGame: false };
     default:
       return state;
   }

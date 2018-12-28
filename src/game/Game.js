@@ -3,6 +3,7 @@ const { GAME_CREATED } = require('./events');
 class Game {
   _created(event) {
     this.id = event.data.id;
+    this.virtualPlayers = event.data.virtualPlayers;
   }
 
   constructor(game) {
@@ -11,6 +12,7 @@ class Game {
     }
 
     this.id = game.id;
+    this.virtualPlayers = game.virtualPlayers || {};
   }
 
   apply(event) {

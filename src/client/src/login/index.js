@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
+import PrimaryButton from '../primary-button';
 import './login.css';
 
 class Login extends Component {
-  render() {
+  go() {
     // TODO: can't have a hard-coded path in here
+    window.location.href = 'http://localhost:3100/auth/google';
+  }
+
+  render() {
     return (
       <div className="login">
         <div className="login__title">Rentz</div>
         <img className="login__image" alt="Rentz" src="cards.svg" />
-        <a className="login__link" href="http://localhost:3100/auth/google">Log in with Google</a>
+        <PrimaryButton
+          className="login__link"
+          onClick={_ => this.go()}
+          text="Log in with Google" />
       </div>
     );
   }

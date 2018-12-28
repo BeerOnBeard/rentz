@@ -3,11 +3,11 @@ const { GAME_CREATED } = require('game/events');
 const generateGuid = require('uuid/v4');
 
 const EventFactory = {
-  created: function(id) {
+  created: function(id, virtualPlayers) {
     return { 
       eventId: generateGuid(),
       type: GAME_CREATED,
-      data: { id }
+      data: { id, virtualPlayers }
     };
   }
 };
@@ -23,12 +23,12 @@ class GameCommandDecorator extends Game {
     this._uncommittedEvents = [];
   }
 
-  create(id) {
+  create(id, virtualPlayers) {
     if (this.id !== undefined) {
       throw Error('Game already exists');
     }
 
-    this._publish(EventFactory.created(id));
+    this._publish(EventFactory.created(id, virtualPlayers));
   }
 
   copy() {
