@@ -3,7 +3,17 @@ import { connect } from 'react-redux';
 
 class Game extends Component {
   render() {
-    return <div>{this.props.game.id}</div>
+    return (
+      <div>
+        <div>Game ID: {this.props.game.id}</div>
+        <div>Virtual Players:</div>
+        <ul>
+        {
+          Object.keys(this.props.game.virtualPlayers).map(key => <li key={key}>{this.props.game.virtualPlayers[key]}</li>)
+        }
+        </ul>
+      </div>
+    );
   }
 }
 

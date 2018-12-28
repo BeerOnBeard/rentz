@@ -1,10 +1,10 @@
-.lounge {
+.create-game {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.lounge__create-game {
+.create-game__start {
   width: 14rem;
 }
