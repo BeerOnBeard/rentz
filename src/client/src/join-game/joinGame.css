@@ -1,0 +1,13 @@
+.join-game {
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.join-game__input {
+  text-align: center;
+  line-height: 3rem;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
