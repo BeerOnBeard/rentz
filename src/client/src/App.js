@@ -6,6 +6,7 @@ import Login from './login';
 import Loading from './loading';
 import Lounge from './lounge';
 import CreateGame from './create-game';
+import JoinGame from './join-game';
 import Game from './game';
 
 class App extends Component {
@@ -22,6 +23,10 @@ class App extends Component {
       return <CreateGame />
     }
 
+    if (this.props.isJoiningGame) {
+      return <JoinGame />
+    }
+
     if (this.props.game) {
       return <Game />
     }
@@ -31,5 +36,13 @@ class App extends Component {
 }
 
 export default connect(
-  state => { return { mustLogIn: state.mustLogIn, user: state.user, isCreatingGame: state.isCreatingGame, game: state.game } }
+  state => {
+    return {
+      mustLogIn: state.mustLogIn,
+      user: state.user,
+      isCreatingGame: state.isCreatingGame,
+      isJoiningGame: state.isJoiningGame,
+      game: state.game
+    }
+  }
 )(App);

@@ -1,10 +1,15 @@
 .lounge {
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-flow: column;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 .lounge__create-game {
+  width: 14rem;
+}
+
+.lounge__join-game {
   width: 14rem;
 }
